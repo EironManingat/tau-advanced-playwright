@@ -12,7 +12,7 @@ export default defineConfig({
   reporter: 'html',
   // timeout: 5000,
   use: {
-    storageState: 'storageState.json',
+    storageState: 'storagestatePractice.json',
     trace: 'on',
     baseURL: process.env.ENV === 'production' 
       ? baseEnvUrl.production.home
@@ -30,7 +30,7 @@ export default defineConfig({
       name: 'chromium',
       use: { 
         ...devices['Desktop Chrome'],
-        storageState: 'storageState.json',
+        storageState: 'storagestatePractice.json',
        },
     },
     {

@@ -13,11 +13,11 @@ class LoginPage {
     this.loginButton = page.getByRole('button', { name: 'Login' });
     this.messagePanel = page.locator('#output');
     this.password = page.getByPlaceholder('Password');
-    this.userName = page.getByPlaceholder('UserName');
+    this.userName = page.getByPlaceholder('Username');
   }
 
-  async fillEmail(email: string) {
-    await this.userName.fill(email);
+  async fillEmail(userName: string) {
+    await this.userName.fill(userName);
   }
 
   async fillPassword(password: string) {
@@ -31,8 +31,8 @@ class LoginPage {
   }
 
   async checkLoggedIn() {
-    await expect(this.page).toHaveURL(/.*profile/);
-    await expect(this.page).toHaveTitle(/DEMOQA/);
+    await expect(this.page).toHaveURL(/.*inventory/);
+    await expect(this.page).toHaveTitle(/Swag Labs/);
   }
 
   async checkInvalidCredentials() {
